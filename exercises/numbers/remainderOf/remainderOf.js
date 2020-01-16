@@ -39,6 +39,8 @@ if (require.main === module) {
   console.log(remainderOf(10, 3) === 1)
   console.log(remainderOf(10, 4) === 2)
   console.log(remainderOf(129, 17) === 10)
+  console.log(remainderOf(129, 15) === 9)
+
   
   // Add your own sanity checks here.
   // How else will you be sure your code does what you think it does?
