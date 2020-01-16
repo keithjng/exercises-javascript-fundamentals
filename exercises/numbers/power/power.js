@@ -21,6 +21,7 @@ function power(base, exponent) {
 
     That means you don't have to deal with, e.g., power(2, 1.5).
   */
+ return base ** exponent
 }
 
 if (require.main === module) {
@@ -33,6 +34,9 @@ if (require.main === module) {
   console.log(power(-1, 2) === 1);
   console.log(power(-1, 3) === -1);
 
+  console.log(power(3,0) === 1)
+  console.log(power(5,2) === 25)
+  
   // Your sanity checks go here
   // What should happen if base is 0? If exponent is 0?
 }
