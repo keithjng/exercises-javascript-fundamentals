@@ -22,11 +22,17 @@ function remainderOf(num) {
     If you're not sure, step out of the code and use pen + paper. Start
     with simple examples and pay attention to the process you carry out.
   */
+ return num % 3
 }
 
 if (require.main === module) {
   console.log('Running sanity checks for remainderOf');
 
+  console.log(remainderOf(7) === 1)
+  console.log(remainderOf(6) === 0)  
+  console.log(remainderOf(23) === 2)
+  console.log(remainderOf(72) === 0)
+  
   // Add your own sanity checks here.
   // How else will you be sure your code does what you think it does?
 }
