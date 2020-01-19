@@ -17,7 +17,6 @@ function longestWord(string) {
         var longest = split[i];
       }
     } 
-    console.log(longest)
     return longest
 }
 
