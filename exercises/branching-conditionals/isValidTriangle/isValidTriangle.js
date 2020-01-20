@@ -19,6 +19,27 @@ function isValidTriangle(a, b, c) {
     from 0º and you drawing the third side. What's the largest this third side
     could ever be?
   */
+  side = 0
+  if (a + b > c) {
+    side = side + 1 
+  }
+  else {
+    return false 
+  }
+  if (a + c > b){
+    side = side + 1 
+  }
+  else {
+    return false
+  }
+  if (b + c > a) {
+    side = side +1 
+  }
+  else {
+    return false
+  }
+  if (side === 3)
+    return true
 }
 
 if (require.main === module) {
@@ -31,6 +52,11 @@ if (require.main === module) {
   console.log(isValidTriangle(4, 5, 3) === true);
   console.log(isValidTriangle(5, 3, 4) === true);
   console.log(isValidTriangle(5, 4, 3) === true);
+
+  console.log(isValidTriangle(1, 4, 7) === false);
+  console.log(isValidTriangle(10, 14, 28) === false);
+  console.log(isValidTriangle(3, 1, 1) === false);
+  console.log(isValidTriangle(4, 4, 9) === false);
 
   // Add your own sanity checks here. Test negative cases.
   // How else will you be sure your code does what you think it does?
