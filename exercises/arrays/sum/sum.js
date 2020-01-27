@@ -10,11 +10,17 @@
  */
 function sum(array) {
   // This is your job. :)
-}
+  let total = array[0]
+
+  //for (i = 0; i < array.length; i++) {
+    Math.[array]
+  }
+//}
 
 if (require.main === module) {
   console.log('Running sanity checks for sum:');
 
+  console.log(sum(['1', '2', '3', '4']) === '10')
   // Add your own sanity checks here.
   // How else will you be sure your code does what you think it does?
 }

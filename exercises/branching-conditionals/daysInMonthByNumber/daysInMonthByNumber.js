@@ -19,16 +19,41 @@ function daysInMonthByNumber(monthNum) {
   if (!Number.isInteger(monthNum) || monthNum < 1 || monthNum > 12) {
     throw new Error(`Expected a month number from 1-12, received: ${monthNum}`);
   }
-
+  //I left this here because I want to figure out why I couldn't compare the integer to the array later
+  //let thirOne = ['1', '3', '5', '7', '8', '10', '12'];
+  //let belThirOne = ['2', '4', '6', '9', '11'];
+  //let month = Array.from(monthNum)
+  //if (month = thirOne) {
+  //  console.log(month) 
+  //  return 31
+  //}
+  //else if (month = belThirOne) {
+  //  if (month = 2) {
+  //    return 28 
+  //  }
+  //else {
+  //    return 30
+  //  }
+  //}
   // This is your job. :)
+  if (monthNum === 1 || monthNum === 3 || monthNum === 5 || monthNum === 7 || monthNum === 8 || monthNum === 10 || monthNum === 12) {
+    return 31
+  } 
+  else if (monthNum === 2){
+    return 28
+  }
+  else {
+    return 30
+  }
 }
 
 if (require.main === module) {
   console.log('Running sanity checks for isZero:');
 
-  console.log(daysInMonthByNumber(1) === _____);
-  console.log(daysInMonthByNumber(2) === _____);
-  console.log(daysInMonthByNumber(3) === _____);
+  console.log(daysInMonthByNumber(1) === 31);
+  console.log(daysInMonthByNumber(2) === 28);
+  console.log(daysInMonthByNumber(3) === 31);
+  console.log(daysInMonthByNumber(4) === 30);
 }
 
 module.exports = daysInMonthByNumber;

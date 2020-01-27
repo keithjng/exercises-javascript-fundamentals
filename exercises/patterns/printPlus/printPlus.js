@@ -37,9 +37,20 @@ function printPlus(height) {
     throw new Error(`height must be an odd integer, received: ${height}`);
   }
 
-  for (let i = 0; i < height; i++) {
+  for (let i = 0; i < Math.floor(height / 2); i++) {
     // This is your job. :)
 
+    helpers.printCountTimes(' ', Math.floor(height / 2))
+    helpers.printCountTimes('#', 1)
+    helpers.printNewLine();
+  }
+  for (let i = Math.ceil(height / 2); i < Math.ceil(height / 2) + 1; i++){
+    helpers.printCountTimes('#', height)
+    helpers.printNewLine();
+  }
+  for (let i = Math.ceil(height / 2); i < Math.floor(height); i++) {
+    helpers.printCountTimes(' ', Math.floor(height / 2))
+    helpers.printCountTimes('#', 1)
     helpers.printNewLine();
   }
 }
@@ -60,6 +71,10 @@ if (require.main === module) {
   plusPrintTest(5);
   plusPrintTest(7);
   plusPrintTest(9);
+  plusPrintTest(11);
+  plusPrintTest(15);
+  plusPrintTest(21);
+
 }
 
 module.exports = printPlus;

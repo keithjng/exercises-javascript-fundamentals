@@ -15,10 +15,64 @@
  */
 function letterGrade(percentGrade) {
   // This is your job. :)
+  var grade = ''
+    if (percentGrade > 96) {
+      grade = 'A+'
+    }
+    else if (percentGrade > 92) {
+      grade = 'A'
+    }
+    else if (percentGrade > 89) {
+      grade = 'A-'
+    }
+    else if (percentGrade > 86) {
+      grade = 'B+'
+    }
+    else if (percentGrade > 82) {
+      grade = 'B'
+    }
+    else if (percentGrade > 79) {
+      grade = 'B-'
+    }
+    else if (percentGrade > 76) {
+      grade = 'C+'
+    }
+    else if (percentGrade > 72) {
+      grade = 'C'
+    }
+    else if (percentGrade > 69) {
+      grade = 'C-'
+    }
+    else if (percentGrade > 66) {
+      grade = 'D+'
+    }
+    else if (percentGrade > 62) {
+      grade = 'D'
+    }
+    else if (percentGrade > 59) {
+      grade = 'D-'
+    }
+    else if (percentGrade < 60) {
+      grade = 'F'
+    }
+  return grade
 }
 
 if (require.main === module) {
   console.log('Running sanity checks for letterGrade:');
+
+  console.log(letterGrade(0) === 'F')
+  console.log(letterGrade(10) === 'F')
+  console.log(letterGrade(40) === 'F')
+  console.log(letterGrade(60) === 'D-')  
+  console.log(letterGrade(70) === 'C-')
+  console.log(letterGrade(73) === 'C')  
+  console.log(letterGrade(79) === 'C+')
+  console.log(letterGrade(80) === 'B-')
+  console.log(letterGrade(85) === 'B')
+  console.log(letterGrade(90) === 'A-')
+  console.log(letterGrade(99) === 'A+')
+  console.log(letterGrade(109) === 'A+')
 
   // Add your own sanity checks here.
   // How else will you be sure your code does what you think it does?
