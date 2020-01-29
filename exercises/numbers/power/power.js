@@ -21,7 +21,20 @@ function power(base, exponent) {
 
     That means you don't have to deal with, e.g., power(2, 1.5).
   */
- return base ** exponent
+  if (exponent === 0) {
+    newBase = 1
+    return newBase
+  }
+  else if (exponent === 1) {
+    return base
+  }
+  else {
+    let newBase = base
+    for (let i = 1; i < exponent; i++) {
+      newBase = newBase * base
+    }
+    return newBase
+  }
 }
 
 if (require.main === module) {
@@ -36,6 +49,9 @@ if (require.main === module) {
 
   console.log(power(3,0) === 1)
   console.log(power(5,2) === 25)
+  console.log(power(8,2) === 64)
+  console.log(power(2,6) === 64)
+  console.log(power(7,2) === 49)
   
   // Your sanity checks go here
   // What should happen if base is 0? If exponent is 0?
