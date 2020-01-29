@@ -20,18 +20,44 @@ let helpers = require('../printHelpers');
  *
  * @param {number} n - The size of the multiplication table to print
  */
-function printMultiplicationTable(n) {
+//  I initially wanted to make this second function to make the spaces, but it wasn't working out. 
+//  That's when I discovered \t!! It makes it kind of spacey, but it seems to work so no complaints. 
+//
+//function space(n) {
+//     let space = '';
+//     let char = n.toString();
+//     if (char.length < 2) {
+//       space = space + '   ';            
+//       return space;
+//     }
+//     else if (char.length < 3) {
+//       space = space + '  ';            
+//       return space;
+//     }
+//     else 
+//     space = space + ' ';            
+//       return space;
+//  }
+  function printMultiplicationTable(n) {
   /*
     This is your job. :)
-
     Note: Getting the numbers aligned in a way that looks nice can be
     a pain in the butt. Get one version working that prints out the
     multiplication table without concern for alignment and then figure
     out how to align the columns.
   */
-  for (let i = 0; i < n + 1; i++)
-    helpers.printCountTimes(i, n)
-    helpers.printNewLine();
+  if (n === 1) {
+    helpers.printCountTimes('1', 1);
+    helpers.printNewLine(); 
+  }
+  else {
+    for (let j = 1; j < n + 1; j++) {
+      for (let i = 1; i < n + 1; i++) {
+      helpers.printCountTimes('\t' + j * i, 1) 
+      }
+      helpers.printNewLine(); 
+    }
+  }
 }
 
 /**
@@ -49,6 +75,8 @@ if (require.main === module) {
   multiplicationTablePrintTest(2);
   multiplicationTablePrintTest(5);
   multiplicationTablePrintTest(8);
+  multiplicationTablePrintTest(10);
+  multiplicationTablePrintTest(15);
 }
 
 module.exports = printMultiplicationTable;
